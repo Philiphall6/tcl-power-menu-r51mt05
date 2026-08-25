@@ -1,0 +1,9 @@
+*.jks
+*.keystore
+*.idsig
+*.log
+*.tmp
+*.img
+*.bin
+*.pkg
+*.fw

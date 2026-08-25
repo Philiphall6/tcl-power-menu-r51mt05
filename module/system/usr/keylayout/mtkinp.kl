@@ -1,0 +1,215 @@
+#ifndef VENDOR_EDIT
+#zihua.bu@tcl.com, 2022/4/9, add TCL_MEGOGO,TCL_IVI,TCL_WETV
+key 2     1
+key 3     2
+key 4     3
+key 5     4
+key 6     5
+key 7     6
+key 8     7
+key 9     8
+key 10    9
+key 11    0
+key 28    DPAD_CENTER
+key 94    GUIDE
+key 102   HOME
+key 103   DPAD_UP
+key 105   DPAD_LEFT
+key 106   DPAD_RIGHT
+key 108   DPAD_DOWN
+key 111   FORWARD_DEL
+key 113   VOLUME_MUTE
+key 114   VOLUME_DOWN
+key 115   VOLUME_UP
+key 116   F11
+key 139   MENU
+key 156   BOOKMARK
+key 158   BACK
+key 167  MEDIA_RECORD
+key 175  CAPTIONS
+key 201  MEDIA_PAUSE
+key 204  TCL_DASHBOARD
+key 226  WINDOW
+
+key 232  INFO
+key 233  MEDIA_EJECT
+#key 234  MEDIA_PLAY_PAUSE
+
+key 266  NUMPAD_DOT
+key 351  TCL_TVER
+key 357  MENU
+key 358   INFO
+#key 365   GUIDE
+key 377  TV
+key 383  3D_MODE
+
+key 388   TCL_TEXT
+key 392   TCL_AUDIO
+key 398   PROG_RED
+key 399   PROG_GREEN
+key 400   PROG_YELLOW
+key 401   PROG_BLUE
+key 402   CHANNEL_UP
+key 403   CHANNEL_DOWN
+key 418  ZOOM_IN
+key 419  ZOOM_OUT
+key 471  TV_INPUT
+key 574  MEDIA_PREVIOUS
+key 575  MEDIA_PLAY
+key 576  MEDIA_NEXT
+key 577  MEDIA_FAST_FORWARD
+key 578  MEDIA_STOP
+key 579  MEDIA_REWIND
+
+#key 596   POWER
+#key 598   CAPTIONS
+
+# Sony IR Defined Key Code
+key 128   MEDIA_STOP
+key 119   MEDIA_PAUSE
+key 207   MEDIA_PLAY
+key 412   MEDIA_PREVIOUS
+key 407   MEDIA_NEXT
+key 546   TV_ZOOM_MODE
+#key 759   LAST_CHANNEL
+key 52    NUMPAD_DOT
+key 370   CAPTIONS
+# Sync Menu
+key 756   BUTTON_2
+# Google Play
+key 757   BUTTON_3
+# Netflix
+key 758   TCL_NETFLIX #TCL_NETFLIX, normal case
+key 761   BUTTON_12 #TCL_NETFLIX, power on case
+#BUTTON_5 -> CARD
+key 601   BUTTON_5
+
+# Realtek Defined Key Code
+#BUTTON_9 -> VIDEO
+key 393   BUTTON_9
+#BUTTON_10 -> AUDIOMTS
+key 644   BUTTON_10
+#BUTTON_11 -> AUDIOMODE
+key 645   BUTTON_11
+#Sleep key -> Sleep Timers
+key 142   TV_TIMER_PROGRAMMING
+#BUTTON_13 -> FAVCH
+key 647   BUTTON_13
+
+#HIKEEN IR
+key 385 TV_RADIO_SERVICE
+#KEY_LIST -> BUTTON_5
+#key 395 BUTTON_5
+#KEY_TTX_SUBPAGE -> BUTTON_1
+key 590   BUTTON_1
+#KEY_FAV_ADD -> BUTTON_14
+#key 591   BUTTON_14
+#KEY_FAV -> BUTTON_15
+key 592   BUTTON_15
+#KEY_FAV_SUB -> BUTTON_16
+key 593   BUTTON_16
+#KEY_TTX_CANCEL -> KEYCODE_11
+#key 594 11
+#KEY_REC_LIST -> KEYCODE_12
+#key 595 12
+#KEY_ZOOM -> TV_ZOOM_MODE
+key 372   TCL_ZOOM
+#KEY_PLAYPAUSE -> MEDIA_PLAY_PAUSE
+key 164 MEDIA_PLAY_PAUSE
+
+#TCL KEY
+key 199   TCL_LANG
+key 253   TCL_MTS
+key 365   TCL_EPG
+key 561   TCL_SET
+key 456   TCL_QUICK_MENU
+key 563   TCL_NUMBER
+key 569   TCL_YOUTUBE
+key 570   TCL_HULU
+key 619   TCL_FREEVIEW_PLAY
+key 763   TCL_FREEVIEW_PLAY
+key 395   TCL_LIST
+key 174   TCL_EXIT
+key 485   TCL_USB_MEDIA
+key 251   TCL_GLOBAL_PLAY
+key 254   TCL_MOUSE_KEY
+key 427   TCL_11
+key 428   TCL_12
+# ifndef VENDOR_EDIT
+# qizhi2.liu@tcl.com, 2022/8/10, add tcl keys
+key 452   TCL_3_LINE_INPUT
+#endif /* VENDOR_EDIT */
+key 430   TCL_BML
+key 431   TCL_TERMINAL
+key 432   TCL_BS
+key 433   TCL_CS
+key 434   TCL_RECORD_LIST
+key 435   TCL_SCHEDULE_LIST
+key 555   TCL_RC_RF_UNCONNECT
+key 437   TCL_RF_LINK_S
+key 438   TCL_SATELLITE_BS_CS
+key 439   TCL_BS_CS_4K
+key 440   TCL_U_NEXT
+key 455   TCL_LAST_CHANNEL
+key 441   TCL_ABEMA
+key 543   TCL_ZEE
+key 559   TCL_BUG_REPORT
+key 586   TCL_GLOBO_PLAY
+
+key 588   TCL_ALL_APP
+
+# ifndef VENDOR_EDIT
+# wei60.liu@tcl.com, 2023/06/26, add tcl keys
+key 591      TCL_AV1
+key 594      TCL_HDMI3
+key 595      TCL_TV_ON
+key 596      TCL_TV_OFF
+key 597      TCL_HDMI4
+key 598      TCL_HDMI1
+key 599      TCL_HDMI2
+#endif /* VENDOR_EDIT */
+
+# ifndef VENDOR_EDIT
+# wei60.liu@tcl.com, 2023/02/28, add tcl keys
+key 646   TCL_WINK
+#endif /* VENDOR_EDIT */
+key 648   TCL_XPLORETV
+# ifndef VENDOR_EDIT
+# wei60.liu@tcl.com, 2023/02/28, add tcl keys
+key 649   TCL_PLUTOTV
+#endif /* VENDOR_EDIT */
+key 650   TCL_TVPLUS
+key 651   TCL_BROWSEHERE
+key 652   TCL_APPLETV
+key 653   PROFILE_SWITCH
+
+key 654   TCL_STAN
+key 655   TCL_GALAVIEW
+# ifndef VENDOR_EDIT
+# qizhi2.liu@tcl.com, 2022/7/25, add tcl FOD keys
+key 703   TCL_FOD
+#endif /* VENDOR_EDIT */
+
+key 743   TCL_VIDIO
+key 745   TCL_MEGOGO
+key 746   TCL_IVI
+key 747   TCL_WETV
+key 748   TCL_GUARD
+key 749   TCL_HOVRING
+key 750   TCL_WATCHLIST
+key 751   TCL_OKKO
+key 752   TCL_PRIMEVIDEO
+key 753   TCL_TOT
+key 754   TCL_LINE_TV
+key 755   TCL_FPTPLAYER
+key 759   TCL_IQIYI
+key 762   TCL_DISNEY
+key 767   TCL_HD
+#endif /* VENDOR_EDIT */
+
+#ifndef VENDOR_EDIT
+#tengyi.an@tcl.com, 2023/10/30, add VIX,SonyLIV and VTVGO keys.
+key 640     TCL_VIX
+key 641     TCL_SONYLIV
+key 642     TCL_VTVGO
+#endif /* VENDOR_EDIT */

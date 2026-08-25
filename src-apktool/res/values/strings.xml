@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TCL Power Menu</string>
+    <string name="accessibility_desc">Intercepte le bouton Power pour afficher un menu ou rallumer le retroeclairage.</string>
+</resources>

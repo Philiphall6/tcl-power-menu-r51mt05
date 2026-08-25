@@ -1,0 +1,6 @@
+id=tcl_power_menu
+name=TCL Power Menu
+version=v0.6
+versionCode=6
+author=philphall
+description=Bluetooth Power key menu for TCL Android 11: maps Power to F11 to avoid TCL F10 mute, screen off via TCL AudioOnly service; Power key always opens menu, reboot, shutdown.
