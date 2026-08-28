@@ -1,9 +1,11 @@
 #!/system/bin/sh
 
-ui_print "TCL Power Menu v0.6"
+ui_print "TCL Power Menu v0.7"
 ui_print "- Remappe mtkinp key 116 POWER vers F11"
 ui_print "- Evite F10 car ce firmware l'utilise comme mute"
-ui_print "- Bouton Power: ouvre uniquement le menu"
+ui_print "- Veille normale en premier"
+ui_print "- Ecran off direct sans compte a rebours TCL"
+ui_print "- Redemarrage plus doux avec ecran coupe avant reboot"
 ui_print "- Active le service Accessibilite au boot"
 
 set_perm_recursive "$MODPATH/system" 0 0 0755 0644

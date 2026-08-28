@@ -7,3 +7,6 @@
 *.bin
 *.pkg
 *.fw
+*-unsigned.apk
+*-aligned.apk
+src-apktool/build/

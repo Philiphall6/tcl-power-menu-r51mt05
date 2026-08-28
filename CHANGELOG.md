@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.7
+
+- Ajout de `Veille normale` en premier dans le menu.
+- `Ecran off` n'appelle plus la fenetre TCL AudioOnly, pour eviter le compte a rebours.
+- `Ecran off` force directement le flag AudioOnly via les API TCL puis `TVKitService`.
+- `Redemarrer` coupe d'abord l'image, synchronise les ecritures, puis demande un reboot systeme avec fallback root.
+
 ## v0.6
 
 - Le bouton Power/F11 ouvre uniquement le menu.

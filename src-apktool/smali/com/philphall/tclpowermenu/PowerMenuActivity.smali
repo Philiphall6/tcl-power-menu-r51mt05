@@ -42,31 +42,16 @@
 .end method
 
 .method private rebootTv()V
-    .locals 3
+    .locals 1
 
-    :try_start_0
-    const-string v0, "power"
-    invoke-virtual {p0, v0}, Lcom/philphall/tclpowermenu/PowerMenuActivity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-    move-result-object v0
-    check-cast v0, Landroid/os/PowerManager;
-    const-string v1, "userrequested"
-    invoke-virtual {v0, v1}, Landroid/os/PowerManager;->reboot(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-    return-void
-
-    :catch_0
-    move-exception v0
-    const-string v1, "TclPowerMenu"
-    const-string v2, "PowerManager.reboot failed"
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    const-string v0, "reboot"
+    invoke-direct {p0}, Lcom/philphall/tclpowermenu/PowerMenuActivity;->screenOff()V
+    const-string v0, "sync; sleep 1; svc power reboot userrequested || setprop sys.powerctl reboot,userrequested || reboot"
     invoke-direct {p0, v0}, Lcom/philphall/tclpowermenu/PowerMenuActivity;->execRoot(Ljava/lang/String;)V
     return-void
 .end method
 
 .method private screenOff()V
-    .locals 4
+    .locals 3
 
     :try_start_0
     invoke-static {p0}, Lcom/tcl/tvmanager/TTvFunctionManager;->getInstance(Landroid/content/Context;)Lcom/tcl/tvmanager/TTvFunctionManager;
@@ -79,39 +64,25 @@
     invoke-virtual {v0, v1}, Lcom/tcl/os/system/TWindowManager;->setAudioOnlyFlag(Z)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-    goto :goto_start_service
+    goto :goto_tvkit
 
     :catch_0
     move-exception v0
     const-string v1, "TclPowerMenu"
-    const-string v2, "direct screen off failed, using TCL service"
+    const-string v2, "direct screen off failed, using TVKitService fallback"
     invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    :goto_start_service
-    :try_start_1
-    new-instance v0, Landroid/content/Intent;
-    const-string v1, "com.tcl.settings.SHOW_WINDOW"
-    invoke-direct {v0, v1}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-    new-instance v1, Landroid/content/ComponentName;
-    const-string v2, "com.tcl.settings"
-    const-string v3, "com.tcl.settings.ShowWindowService"
-    invoke-direct {v1, v2, v3}, Landroid/content/ComponentName;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
-    move-result-object v0
-    const-string v1, "Type"
-    const-string v2, "AudioOnly"
-    invoke-virtual {v0, v1, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-    move-result-object v0
-    invoke-virtual {p0, v0}, Lcom/philphall/tclpowermenu/PowerMenuActivity;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
+    :goto_tvkit
+    const-string v0, "service call TVKitService 60 i32 1"
+    invoke-direct {p0, v0}, Lcom/philphall/tclpowermenu/PowerMenuActivity;->execRoot(Ljava/lang/String;)V
     return-void
+.end method
 
-    :catch_1
-    move-exception v0
-    const-string v1, "TclPowerMenu"
-    const-string v2, "TCL AudioOnly service failed"
-    invoke-static {v1, v2, v0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+.method private standbyTv()V
+    .locals 1
+
+    const-string v0, "input keyevent 223"
+    invoke-direct {p0, v0}, Lcom/philphall/tclpowermenu/PowerMenuActivity;->execRoot(Ljava/lang/String;)V
     return-void
 .end method
 
@@ -150,11 +121,17 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .locals 1
 
-    if-eqz p2, :cond_screen
+    if-eqz p2, :cond_standby
     const/4 v0, 0x1
-    if-eq p2, v0, :cond_reboot
+    if-eq p2, v0, :cond_screen
     const/4 v0, 0x2
+    if-eq p2, v0, :cond_reboot
+    const/4 v0, 0x3
     if-eq p2, v0, :cond_shutdown
+    goto :goto_finish
+
+    :cond_standby
+    invoke-direct {p0}, Lcom/philphall/tclpowermenu/PowerMenuActivity;->standbyTv()V
     goto :goto_finish
 
     :cond_screen
@@ -177,15 +154,18 @@
     .locals 3
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
-    const/4 v0, 0x3
+    const/4 v0, 0x4
     new-array v0, v0, [Ljava/lang/CharSequence;
     const/4 v1, 0x0
-    const-string v2, "Ecran off"
+    const-string v2, "Veille normale"
     aput-object v2, v0, v1
     const/4 v1, 0x1
-    const-string v2, "Redemarrer"
+    const-string v2, "Ecran off"
     aput-object v2, v0, v1
     const/4 v1, 0x2
+    const-string v2, "Redemarrer"
+    aput-object v2, v0, v1
+    const/4 v1, 0x3
     const-string v2, "Eteindre"
     aput-object v2, v0, v1
     new-instance v1, Landroid/app/AlertDialog$Builder;
