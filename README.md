@@ -1,4 +1,4 @@
-# TCL Power Menu v0.7
+# TCL Power Menu v1.0
 
 Module Magisk pour TCL Android TV / Google TV Android 11 qui remplace le comportement du bouton Power par un menu simple :
 
@@ -20,7 +20,7 @@ Resultat attendu :
 - Les services Android continuent de tourner.
 - La TV consomme plus qu'en vraie veille, car ce n'est pas un arret complet.
 
-## Comportement v0.7
+## Comportement v1.0
 
 Le bouton Power physique/Bluetooth est remappe via Magisk :
 
@@ -47,8 +47,8 @@ Ce comportement evite le cas ou Power essayait de reveiller le retroeclairage au
 
 ## Fichiers
 
-- `dist/tcl-power-menu-v0.7-magisk.zip` : module Magisk pret a installer.
-- `dist/TclPowerMenu-v0.7.apk` : APK seul, utile pour test ou installation manuelle.
+- `dist/tcl-power-menu-v1.0-magisk.zip` : module Magisk pret a installer.
+- `dist/TclPowerMenu-v1.0.apk` : APK seul, utile pour test ou installation manuelle.
 - `module/` : contenu exact du module Magisk.
 - `src-apktool/` : source apktool/smali de l'APK.
 
@@ -58,7 +58,7 @@ Empreintes SHA256 : voir `dist/SHA256SUMS`.
 
 Depuis l'application Magisk :
 
-1. copier `dist/tcl-power-menu-v0.7-magisk.zip` sur la TV ;
+1. copier `dist/tcl-power-menu-v1.0-magisk.zip` sur la TV ;
 2. ouvrir Magisk ;
 3. Modules ;
 4. Installer depuis le stockage ;
@@ -68,8 +68,8 @@ Depuis l'application Magisk :
 Depuis ADB root :
 
 ```sh
-adb push dist/tcl-power-menu-v0.7-magisk.zip /data/local/tmp/
-adb shell su -c 'magisk --install-module /data/local/tmp/tcl-power-menu-v0.7-magisk.zip'
+adb push dist/tcl-power-menu-v1.0-magisk.zip /data/local/tmp/
+adb shell su -c 'magisk --install-module /data/local/tmp/tcl-power-menu-v1.0-magisk.zip'
 adb reboot
 ```
 

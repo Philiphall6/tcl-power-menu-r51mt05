@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.0
+
+- Promotion de la v0.7 en version stable.
+- Conserve `Veille normale` en premier.
+- Conserve `Ecran off` sans fenetre TCL ni compte a rebours.
+- Conserve le reboot plus doux avec image coupee avant redemarrage.
+
 ## v0.7
 
 - Ajout de `Veille normale` en premier dans le menu.

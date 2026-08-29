@@ -50,7 +50,7 @@ check_state() {
   done
 
   trim_log
-  log_msg "service start v0.7 moddir=$MODDIR"
+  log_msg "service start v1.0 moddir=$MODDIR"
   check_state
   if pm path "$PKG" >/dev/null 2>&1; then
     enable_accessibility_service

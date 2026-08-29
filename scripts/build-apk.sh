@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-VERSION="0.7"
+VERSION="1.0"
 APKTOOL="${APKTOOL:-apktool}"
 ZIPALIGN="${ZIPALIGN:-zipalign}"
 APKSIGNER="${APKSIGNER:-apksigner}"

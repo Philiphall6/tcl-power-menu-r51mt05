@@ -1,6 +1,6 @@
 id=tcl_power_menu
 name=TCL Power Menu
-version=v0.7
-versionCode=7
+version=v1.0
+versionCode=10
 author=philphall
 description=Bluetooth Power key menu for TCL Android 11: standby first, no-countdown screen off, softer reboot, shutdown.

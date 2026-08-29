@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-ui_print "TCL Power Menu v0.7"
+ui_print "TCL Power Menu v1.0"
 ui_print "- Remappe mtkinp key 116 POWER vers F11"
 ui_print "- Evite F10 car ce firmware l'utilise comme mute"
 ui_print "- Veille normale en premier"

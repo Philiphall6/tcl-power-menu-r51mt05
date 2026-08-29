@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-VERSION="0.7"
+VERSION="1.0"
 APK="dist/TclPowerMenu-v${VERSION}.apk"
 
 if [ ! -f "$APK" ]; then

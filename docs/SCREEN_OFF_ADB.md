@@ -13,7 +13,7 @@ Pour une TV root utilisee en debug, ce comportement est peu pratique.
 
 ## Solution retenue
 
-Le bouton `Ecran off` du menu n'appelle pas `reboot -p` et ne simule pas une extinction complete. En v0.7, il n'appelle plus non plus la fenetre TCL AudioOnly, afin d'eviter le compte a rebours.
+Le bouton `Ecran off` du menu n'appelle pas `reboot -p` et ne simule pas une extinction complete. En v1.0, il n'appelle pas la fenetre TCL AudioOnly, afin d'eviter le compte a rebours.
 
 Il tente d'abord les API TCL directes :
 
@@ -42,7 +42,7 @@ Cela permet de conserver ADB actif, a condition que le reseau reste lui aussi ac
 
 ## Sortir du mode
 
-Sur cette TV, les touches classiques de la telecommande sortent du mode AudioOnly. La v0.7 laisse donc ce reveil au comportement TCL natif.
+Sur cette TV, les touches classiques de la telecommande sortent du mode AudioOnly. La v1.0 laisse donc ce reveil au comportement TCL natif.
 
 Le bouton Power ne force plus le reveil du retroeclairage. Il ouvre uniquement le menu quand Android livre l'evenement au service d'accessibilite.
 
